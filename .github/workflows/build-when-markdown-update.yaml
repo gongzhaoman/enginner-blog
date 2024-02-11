@@ -35,6 +35,7 @@ jobs:
       - name: Sync Markdown Files
         if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed') || (github.event_name == 'repository_dispatch' && github.event.action == 'markdown-update')
         run: |
+          ls -a enginner-blog/
           cp -R markdown/* enginner-blog/public/markdown/
 
       # 设置 Node.js 环境
