@@ -24,7 +24,7 @@ jobs:
 
       # 如果 Markdown 文件在另一个仓库，这里需要添加额外的步骤来拉取那些文件
       - name: Checkout Markdown Repository
-        if: github.event_name == 'repository_dispatch'
+        if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed') || (github.event_name == 'repository_dispatch' && github.event.action == 'markdown-update')
         uses: actions/checkout@v3
         with:
           repository: gongzhaoman/markdown-notes
@@ -33,7 +33,7 @@ jobs:
 
       # 这一步骤同步文件到 Next.js 项目的正确位置
       - name: Sync Markdown Files
-        if: github.event_name == 'repository_dispatch'
+        if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed') || (github.event_name == 'repository_dispatch' && github.event.action == 'markdown-update')
         run: |
           cp -R markdown/* enginner-blog/public/markdown/
 
