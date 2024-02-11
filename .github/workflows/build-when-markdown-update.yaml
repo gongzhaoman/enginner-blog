@@ -31,13 +31,7 @@ jobs:
           path: markdown-notes
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
-      # 这一步骤同步文件到 Next.js 项目的正确位置
-      - name: Sync Markdown Files
-        if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed') || (github.event_name == 'repository_dispatch' && github.event.action == 'markdown-update')
-        run: |
-          ls -a
-
-      # 设置 Node.js 环境
+       # 设置 Node.js 环境
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
