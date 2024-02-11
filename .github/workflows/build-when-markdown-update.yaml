@@ -35,7 +35,7 @@ jobs:
       - name: Sync Markdown Files
         if: github.event_name == 'repository_dispatch'
         run: |
-          cp -R markdown/* nextjs-app/public/markdown/
+          cp -R markdown/* enginner-blog/public/markdown/
 
       # 设置 Node.js 环境
       - name: Setup Node.js
