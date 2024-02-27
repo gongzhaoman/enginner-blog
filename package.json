@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "./update-markdown.sh && next build",
+    "build": "./getMarkdown.sh && next build",
     "start": "next start",
     "lint": "next lint"
   },
