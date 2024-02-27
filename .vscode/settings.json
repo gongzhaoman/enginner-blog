@@ -1,0 +1,7 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "C_Cpp.errorSquiggles": "disabled",
+  "cSpell.words": ["openai", "signin", "signup", "signout", "wondervoy", "mystist"]
+}

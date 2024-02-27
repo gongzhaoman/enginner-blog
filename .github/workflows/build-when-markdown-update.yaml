@@ -17,13 +17,6 @@ jobs:
           submodules: true
           lfs: false
 
-      - name: Checkout Markdown Repository
-        uses: actions/checkout@v3
-        with:
-          repository: gongzhaoman/markdown-notes
-          path: markdown-notes
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-
       # 设置 Node.js 环境
       - name: Setup Node.js
         uses: actions/setup-node@v2
