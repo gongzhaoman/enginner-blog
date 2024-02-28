@@ -1,3 +1,11 @@
+import { getAllPosts } from '../lib/getMarkdownContent'
+import Causl from './causl'
+
 export default function Page() {
-  return <p>blog detial page</p>
+  const posts = getAllPosts()
+  return (
+    <div>
+      <Causl posts={posts} />
+    </div>
+  )
 }
