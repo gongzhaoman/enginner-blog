@@ -1,4 +1,3 @@
-// lib/markdown.js
 import fs from 'fs'
 import { marked } from 'marked'
 import path from 'path'
@@ -6,11 +5,11 @@ import path from 'path'
 // 根据文件名查找 Markdown 文件并转换为 HTML
 export function getMarkdownDataByFileName(fileName: string) {
   const rootDirPath = path.resolve('./markdown-notes')
-  const authors = fs.readdirSync(rootDirPath)
+  const authors = fs.readdirSync(rootDirPath).filter((item) => !item.startsWith('.')) // 过滤隐藏目录
 
   for (const author of authors) {
     const authorPath = path.join(rootDirPath, author)
-    const files = fs.readdirSync(authorPath)
+    const files = fs.readdirSync(authorPath).filter((file) => !file.startsWith('.')) // 同样过滤隐藏文件，如果需要
 
     for (const file of files) {
       if (file.replace('.md', '') === fileName) {
@@ -28,12 +27,12 @@ export function getMarkdownDataByFileName(fileName: string) {
 
 export function getAllPosts() {
   const rootDirPath = path.resolve('./markdown-notes')
-  const authors = fs.readdirSync(rootDirPath)
+  const authors = fs.readdirSync(rootDirPath).filter((item) => !item.startsWith('.')) // 过滤隐藏目录
 
   const posts = authors.reduce(
     (accumulatedPosts, author) => {
       const authorPath = path.join(rootDirPath, author)
-      const files = fs.readdirSync(authorPath)
+      const files = fs.readdirSync(authorPath).filter((file) => !file.startsWith('.')) // 同样过滤隐藏文件，如果需要
 
       const authorPosts = files.map((file) => {
         const fullPath = path.join(authorPath, file)
