@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { getMarkdownDataByFileName } from '../../lib/getMarkdownContent'
+import { getMarkdownDataByFileName } from '../utils/getMarkdownContent'
 
 export async function generateStaticParams() {
   const rootDirPath = path.resolve('./markdown-notes')
