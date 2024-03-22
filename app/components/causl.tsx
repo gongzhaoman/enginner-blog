@@ -19,7 +19,7 @@ export default function Causl({ posts }: { posts: { title: string; slug: string 
       <ul>
         {displayPosts.map((post, index) => (
           <li key={index}>
-            <Link href={'/blog/' + post.slug}>{post.title}</Link>
+            <Link href={'/' + post.slug}>{post.title}</Link>
           </li>
         ))}
       </ul>

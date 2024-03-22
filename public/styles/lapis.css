@@ -1,0 +1,136 @@
+:root {
+    --text-color: #40464f;
+    --primary-color: #4870ac;
+    --bg-color: #ffffff;
+    --marker-color: #a2b6d4;
+    --highlight-color: #ffffb5c2;
+    --header-span-color: var(--primary-color);
+    --block-bg-color: #f6f8fa;
+    --img-shadow-color: #e3e8f0;
+}
+
+/*
+ * Font-face for Cantarell, Source Han Serif CN and JetBrains Mono
+ */
+
+@font-face {
+    font-family: "Cantarell";
+    src: url('../fonts/Cantarell-VF-fixed.otf');
+}
+
+@font-face {
+    font-family: "JetBrainsMono";
+    src: url('../fonts/JetBrainsMono-Regular.ttf');
+}
+
+@font-face {
+    font-family: "SourceHanSerifCN";
+    src: url('../fonts/SourceHanSerifCN-Medium.otf');
+}
+
+@font-face {
+    font-family: "SourceHanSerifCN";
+    src: url('../fonts/SourceHanSerifCN-Bold.otf');
+    font-weight: bold;
+}
+
+/*
+ * Basic Style for Markdown Content
+ */
+
+.markdown-content {
+    color: var(--text-color);
+    font-family: 'Cantarell', 'SourceHanSerifCN', 'JetBrainsMono';
+}
+
+.markdown-content strong {
+    color: var(--primary-color);
+}
+
+.markdown-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.markdown-content ul, .markdown-content ol {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding-left: 20px;
+}
+
+.markdown-content ul {
+    list-style-type: disc;
+}
+
+.markdown-content ul ul {
+    list-style-type: square;
+}
+
+.markdown-content ol {
+    list-style-type: decimal;
+}
+
+.markdown-content blockquote {
+    border-left: 3px solid var(--primary-color);
+    padding: 15px 20px;
+    margin: 20px 0;
+    background: var(--block-bg-color);
+}
+
+.markdown-content code {
+    color: var(--primary-color);
+    background-color: var(--block-bg-color);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.markdown-content img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+    filter: drop-shadow(var(--img-shadow-color) 0px 6px 6px);
+}
+
+.markdown-content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.markdown-content table th, .markdown-content table td {
+    border: 1px solid #d9dfe4;
+    padding: 5px 10px;
+    text-align: left;
+}
+
+.markdown-content table th {
+    background-color: var(--block-bg-color);
+    color: var(--primary-color);
+}
+
+.markdown-content h1, .markdown-content h2, .markdown-content h3, .markdown-content h4, .markdown-content h5, .markdown-content h6 {
+    color: var(--primary-color);
+    font-family: 'SourceHanSerifCN';
+}
+
+.markdown-content h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2.3rem;
+}
+
+.markdown-content h2 {
+    background-color: var(--header-span-color);
+    color: var(--bg-color);
+    padding: 1px 12.5px;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+.markdown-content p {
+    margin: 1em 0;
+    line-height: 1.6;
+    text-align: justify;
+}

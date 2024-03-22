@@ -1,3 +1,5 @@
+import '../../public/styles/lapis.css'
+
 import fs from 'fs'
 import path from 'path'
 
@@ -29,5 +31,10 @@ export async function generateStaticParams() {
 
 export default function Page({ params }: { params: { slug: string } }) {
   const htmlContent = getMarkdownDataByFileName(params.slug)
-  return <div dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
+  return (
+    <div
+      className="markdown-content mx-auto w-[900px]"
+      dangerouslySetInnerHTML={{ __html: htmlContent }}
+    ></div>
+  )
 }
