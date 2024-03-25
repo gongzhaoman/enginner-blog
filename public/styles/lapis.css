@@ -39,9 +39,19 @@
  */
 
 .markdown-content {
+    max-width: 950px;
+    font-size: 1rem;
     color: var(--text-color);
+    line-height: 1.5;
+    word-spacing: 0px;
+    letter-spacing: 0px;
+    word-break: break-word;
+    word-wrap: break-word;
+    text-align: justify;
     font-family: 'Cantarell', 'SourceHanSerifCN', 'JetBrainsMono';
+    margin-bottom: 20rem;
 }
+
 
 .markdown-content strong {
     color: var(--primary-color);

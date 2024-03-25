@@ -33,7 +33,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   const htmlContent = getMarkdownDataByFileName(params.slug)
   return (
     <div
-      className="markdown-content mx-auto w-[900px]"
+      className="markdown-content mx-auto"
       dangerouslySetInnerHTML={{ __html: htmlContent }}
     ></div>
   )
