@@ -60,10 +60,10 @@ const Header = () => {
             <a className="hover:text-custom-lightingFont" href="/components">
               Components
             </a>
-            <a className="hover:text-custom-lightingFont ml-8" href="/templates">
+            <a className="ml-8 hover:text-custom-lightingFont" href="/templates">
               Templates
             </a>
-            <a className="hover:text-custom-lightingFont ml-8" href="/documentation">
+            <a className="ml-8 hover:text-custom-lightingFont" href="/documentation">
               Docs
             </a>
           </div>
@@ -97,7 +97,7 @@ const Header = () => {
           </button>
           <div className="hidden lg:ml-8 lg:flex lg:items-center lg:border-l lg:border-slate-900/15 lg:pl-8">
             <Menu as="div" className="relative">
-              <Menu.Button className="hover:text-custom-lightingFont flex items-center text-sm font-semibold text-gray-900">
+              <Menu.Button className="flex items-center text-sm font-semibold text-gray-900 hover:text-custom-lightingFont">
                 Account
                 <svg
                   className="-mr-1 ml-2 h-5 w-5"
@@ -192,7 +192,7 @@ const Header = () => {
             leaveTo="translate-x-full"
           >
             <Dialog.Panel className="fixed inset-0 flex translate-x-0 items-start justify-end overflow-y-auto">
-              <div className="bg-custom-background min-h-full w-[min(20rem,calc(100vw-theme(spacing.10)))] shadow-2xl ring-1 ring-black/10 transition">
+              <div className="min-h-full w-[min(20rem,calc(100vw-theme(spacing.10)))] bg-custom-background shadow-2xl ring-1 ring-black/10 transition">
                 <h2 className="sr-only">Navigation</h2>
                 <button
                   type="button"
