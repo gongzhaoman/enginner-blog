@@ -9,7 +9,7 @@ export default function Causl({ posts }: { posts: { title: string; slug: string 
 
   const loadMorePosts = () => {
     const newPageIndex = pageIndex + 1
-    const newDisplayPosts = posts.slice(0, 10 * newPageIndex) // 获取更多文章
+    const newDisplayPosts = posts.slice(0, 10 * newPageIndex)
     setDisplayPosts(newDisplayPosts)
     setPageIndex(newPageIndex)
   }

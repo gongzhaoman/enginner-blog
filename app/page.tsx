@@ -1,5 +1,5 @@
-import Causl from './components/causl'
-import { getAllPosts } from './utils/getMarkdownContent'
+import Causl from '../components/causl'
+import { getAllPosts } from '../lib/getMarkdownContent'
 
 export default function Page() {
   const posts = getAllPosts()

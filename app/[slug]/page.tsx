@@ -3,7 +3,7 @@ import '../../public/styles/lapis.css'
 import fs from 'fs'
 import path from 'path'
 
-import { getMarkdownDataByFileName } from '../utils/getMarkdownContent'
+import { getMarkdownDataByFileName } from '../../lib/getMarkdownContent'
 
 export async function generateStaticParams() {
   const rootDirPath = path.resolve('./markdown-notes')
