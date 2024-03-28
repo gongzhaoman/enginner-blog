@@ -15,7 +15,43 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  email     String   @unique
+  password  String
+  comments  Comment[]
+  likes     Like[]
+  createdAt DateTime @default(now())
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  comments  Comment[]
+  createdAt DateTime @default(now())
+}
+
+model Comment {
+  id              Int       @id @default(autoincrement())
+  content         String
+  createdAt       DateTime  @default(now())
+  author          User      @relation(fields: [userId], references: [id])
+  userId          Int
+  post            Post      @relation(fields: [postId], references: [id])
+  postId          Int       // 使postId非可选，确保每条评论都属于某篇文章
+  parentComment   Comment?  @relation("CommentToComment", fields: [parentCommentId], references: [id])
+  parentCommentId Int?      // 用于指向父评论的ID，如果有的话
+  childComments   Comment[] @relation("CommentToComment")
+  likes           Like[]
+}
+
+
+model Like {
+  id         Int      @id @default(autoincrement())
+  comment    Comment  @relation(fields: [commentId], references: [id])
+  commentId  Int
+  user       User     @relation(fields: [userId], references: [id])
+  userId     Int
+  createdAt  DateTime @default(now())
 }
